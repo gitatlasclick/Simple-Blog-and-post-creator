@@ -1,19 +1,55 @@
-<header class="bg-white/90 backdrop-blur-md shadow-lg sticky top-0 z-50">
+<header class="header-glass sticky top-0 z-50 animate-slide-down">
     <div class="container mx-auto px-4 py-4">
         <div class="flex justify-between items-center">
             <div class="flex items-center space-x-4 space-x-reverse">
-                <a href="{% url 'blog:home' %}" class="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-                    <i class="fas fa-blog ml-2"></i>وبلاگ من
+                <a href="{% url 'blog:home' %}" class="group flex items-center space-x-3 space-x-reverse">
+                    <div class="w-12 h-12 bg-gradient-to-br from-purple-600 to-blue-600 rounded-xl flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300 shadow-lg">
+                        <i class="fas fa-blog text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent animate-pulse-slow">
+                            وبلاگ من
+                        </h1>
+                        <p class="text-xs text-gray-500">جایی برای اشتراک‌گذاری ایده‌ها</p>
+                    </div>
                 </a>
             </div>
-            <div class="flex items-center space-x-4 space-x-reverse">
-                <a href="{% url 'blog:home' %}" class="text-gray-700 hover:text-purple-600 transition-colors">
-                    <i class="fas fa-home ml-1"></i>خانه
+            <nav class="hidden md:flex items-center space-x-6 space-x-reverse">
+                <a href="{% url 'blog:home' %}" class="group flex items-center space-x-2 space-x-reverse text-gray-700 hover:text-purple-600 transition-all duration-300">
+                    <i class="fas fa-home group-hover:animate-bounce ml-1"></i>
+                    <span class="font-medium">خانه</span>
                 </a>
-                <a href="{% url 'blog:post_create' %}" class="btn-primary text-white px-4 py-2 rounded-lg">
-                    <i class="fas fa-plus ml-1"></i>پست جدید
+                <a href="{% url 'blog:post_create' %}" class="btn-gradient text-white px-6 py-3 rounded-xl flex items-center space-x-2 space-x-reverse shadow-lg">
+                    <i class="fas fa-plus-circle ml-1"></i>
+                    <span>پست جدید</span>
+                </a>
+            </nav>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden w-10 h-10 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center text-white shadow-lg">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-200 pt-4">
+            <div class="flex flex-col space-y-3 space-y-reverse">
+                <a href="{% url 'blog:home' %}" class="flex items-center space-x-2 space-x-reverse text-gray-700 hover:text-purple-600 transition-colors">
+                    <i class="fas fa-home ml-1"></i>
+                    <span>خانه</span>
+                </a>
+                <a href="{% url 'blog:post_create' %}" class="btn-gradient text-white px-4 py-2 rounded-lg flex items-center space-x-2 space-x-reverse">
+                    <i class="fas fa-plus ml-1"></i>
+                    <span>پست جدید</span>
                 </a>
             </div>
         </div>
     </div>
 </header>
+
+<script>
+    // Mobile Menu Toggle
+    document.getElementById('mobile-menu-btn')?.addEventListener('click', function() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+        menu.classList.add('animate-slide-down');
+    });
+</script>
