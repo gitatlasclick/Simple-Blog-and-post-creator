@@ -1,14 +1,68 @@
-<footer class="bg-white/90 backdrop-blur-md shadow-lg mt-12">
-    <div class="container mx-auto px-4 py-6">
-        <div class="text-center text-gray-600">
-            <p class="text-sm">
-                <i class="fas fa-heart text-red-500 ml-1"></i>
-                ساخته شده با عشق و Django
-                <i class="fas fa-heart text-red-500 mr-1"></i>
-            </p>
-            <p class="text-xs text-gray-400 mt-2">
-                © 2026 تمام حقوق محفوظ است
-            </p>
+<footer class="footer-glass mt-12">
+    <div class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <!-- About Section -->
+            <div class="text-center md:text-right">
+                <div class="flex items-center justify-center md:justify-start space-x-3 space-x-reverse mb-4">
+                    <div class="w-10 h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-blog text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800">وبلاگ من</h3>
+                </div>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    جایی برای اشتراک‌گذاری ایده‌ها، تجربیات و دانسته‌های ما. با ما همراه باشید.
+                </p>
+            </div>
+            
+            <!-- Quick Links -->
+            <div class="text-center">
+                <h4 class="text-sm font-bold text-gray-800 mb-4 flex items-center justify-center">
+                    <i class="fas fa-link ml-2 text-purple-600"></i>
+                    لینک‌های سریع
+                </h4>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <a href="{% url 'blog:home' %}" class="text-gray-600 hover:text-purple-600 transition-colors text-sm">
+                        <i class="fas fa-home ml-1"></i>خانه
+                    </a>
+                    <a href="{% url 'blog:post_create' %}" class="text-gray-600 hover:text-purple-600 transition-colors text-sm">
+                        <i class="fas fa-plus ml-1"></i>پست جدید
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Social Media -->
+            <div class="text-center md:text-left">
+                <h4 class="text-sm font-bold text-gray-800 mb-4 flex items-center justify-center md:justify-start">
+                    <i class="fas fa-share-alt ml-2 text-purple-600"></i>
+                    شبکه‌های اجتماعی
+                </h4>
+                <div class="flex justify-center md:justify-start space-x-3 space-x-reverse">
+                    <a href="#" class="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform shadow-lg">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform shadow-lg">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-gradient-to-br from-green-500 to-teal-500 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform shadow-lg">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom Bar -->
+        <div class="border-t border-gray-200 pt-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="flex items-center space-x-2 space-x-reverse text-gray-600">
+                    <span class="text-sm">ساخته شده با</span>
+                    <i class="fas fa-heart text-red-500 animate-pulse"></i>
+                    <span class="text-sm">و</span>
+                    <span class="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent font-bold">Django</span>
+                </div>
+                <div class="text-xs text-gray-400">
+                    © 2026 تمام حقوق محفوظ است
+                </div>
+            </div>
         </div>
     </div>
 </footer>
